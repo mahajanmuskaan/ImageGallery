@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 nav {
@@ -36,6 +37,8 @@ nav {
     padding: 10px;
     margin: 10px;
     font-size: 25px;
+    position: relative;
+    /* added */
 }
 
 .nav_list_items a {
@@ -46,9 +49,31 @@ nav {
 .nav_list_items a:hover {
     font-size: 30px;
     color: white;
-    transition: all 1s ease-in-out;
+    transition: all 0.2s ease-in-out;
     box-shadow: 5px 5px 0px 0px #BB8EAC;
-    cursor: grab;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background-color: #F3E99F;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown_list {
+    display: block;
+}
+
+.nav_list_items:hover .dropdown {
+    display: block;
 }
 
 .hamburger {
@@ -75,7 +100,7 @@ nav {
     .nav_list {
         position: fixed;
         left: -100%;
-        top: 25%;
+        top: 18%;
         flex-direction: column;
         background-color: #F3E99F;
         width: 100%;
@@ -92,10 +117,29 @@ nav {
         margin: 2rem 0;
     }
 
+    .nav_list_items:after {
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        display: none;
+        position: static;
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+        margin-top: 10px;
+        border-radius: 0;
+    }
+
     .hamburger {
         display: block;
         cursor: pointer;
         margin: 20px;
     }
-
 }

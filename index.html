@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- Creating a Simple and with transition based Navigation bar
 <body>
     <nav class="navbar">
         <div class="log_header">
@@ -18,23 +17,15 @@
         <ul class="nav_list">
             <li class="nav_list_items"><a href="#">Home</a></li>
             <li class="nav_list_items"><a href="#">About</a></li>
-            <li class="nav_list_items"><a href="#">Gallery</a></li>
-            <li class="nav_list_items"><a href="#">Blogs</a></li>
-        </ul>
-    </nav>
-</body> -->
-
-<!-- Creating a Responsive and with transition based Navigation bar with Hamburger-->
-
-<body>
-    <nav class="navbar">
-        <div class="log_header">
-            <img src="images/Muskaan Mahajan.png" alt="Muskaan Mahajan">
-        </div>
-        <ul class="nav_list">
-            <li class="nav_list_items"><a href="#">Home</a></li>
-            <li class="nav_list_items"><a href="#">About</a></li>
-            <li class="nav_list_items"><a href="#">Gallery</a></li>
+            <li class="nav_list_items"><a href="#">Gallery</a>
+                <ul class="dropdown">
+                    <div class="dropdown_list">
+                        <li><a href="#">Category1</a></li>
+                        <li><a href="#">Category2</a></li>
+                        <li><a href="#">Category3</a></li>
+                    </div>
+                </ul>
+            </li>
             <li class="nav_list_items"><a href="#">Blogs</a></li>
         </ul>
         <!-- Hamburger Icon -->
