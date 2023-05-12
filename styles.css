@@ -26,15 +26,16 @@ nav {
 
 .nav_list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 .nav_list li {
     list-style: none;
     padding: 10px;
     margin: 10px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .nav_list_items a {
