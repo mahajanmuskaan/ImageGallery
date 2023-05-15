@@ -26,7 +26,7 @@ function closeMenu() {
 // Slider
 async function imageSlider() {
     try {
-        const query = "Monuments"; // define the query parameter
+        const query = "Nature"; // define the query parameter
         const orient = "square"; // define the orientation parameter
 
         // Fetching response from Public API
@@ -57,3 +57,5 @@ async function imageSlider() {
     }
 }
 imageSlider(); // call the imageSlider function
+
+// Different Categories Images
