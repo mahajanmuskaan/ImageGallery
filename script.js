@@ -6,6 +6,7 @@ const navList = document.querySelector(".nav_list");
 const navItems = document.querySelectorAll(".nav_list_items");
 const slideImages = document.querySelectorAll(".carousel-inner img");
 const boxImages = document.querySelectorAll(".box img");
+const allButtons = document.querySelectorAll(".categories-list-item");
 
 // Here the function mobileMenu() also adds an active class on our hamburger and our nav_list which makes our mobile menu open.
 
@@ -28,11 +29,11 @@ function closeMenu() {
 // Slider
 async function imageSlider() {
     try {
-        const query = "Nature"; // define the query parameter
+        const query = "Forests"; // define the query parameter
         const orient = "square"; // define the orientation parameter
 
         // Fetching response from Public API
-        const url = `${PHOTO_API_URL}?query=${query}&orientation=${orient}`;
+        const url = `${PHOTO_API_URL}?query=${query}&orientation=${orient}&per_page=20`;
         const response = await fetch(url, {
             method: "GET",
             headers: {
@@ -52,13 +53,52 @@ async function imageSlider() {
                 slideImages.forEach((element, index) => {
                     element.setAttribute("src", `${json_data.photos[index].src.original}`);
                 });
-                boxImages.forEach((element, index) => {
-                    element.setAttribute("src", `${json_data.photos[index].src.medium}`);
+                var querynew = "wallpaper";// define the query parameter
+
+                allButtons.forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        // You can call a function or perform any desired action here
+                        let querynew = button.value;
+                        console.log('Button clicked:', button.value);
+                        randomImages(querynew);
+                    });
                 });
+                randomImages(querynew);
             }
         }
     } catch (e) {
         console.error(e);
     }
 }
+
+async function randomImages(querynew) {
+    try {
+        // Coded for generating Particular Photos
+        const orientnew = "square";
+        const urlnew = `${PHOTO_API_URL}?query=${querynew}&orientation=${orientnew}&per_page=20`;
+        const responsenew = await fetch(urlnew, {
+            method: "GET",
+            headers: {
+                "Authorization": API_KEY,
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        });
+
+        console.log(responsenew.status);   // Getting Response status
+        console.log(responsenew.ok);       // Getting boolean value of response.ok
+        if (!responsenew.ok) {
+            throw new Error(`HTTP error! status: ${responsenew.status}`);     // if boolean value of response.ok is false, it will throw the error.
+        } else {
+            const json_data_new = await responsenew.json();
+            boxImages.forEach((element, index) => {
+                element.setAttribute("src", `${json_data_new.photos[index].src.tiny}`);
+            });
+        }
+    }
+    catch (e) {
+        console.error(e);
+    }
+}
+
 imageSlider(); // call the imageSlider function

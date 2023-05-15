@@ -148,23 +148,23 @@ p {
 
 .images-collections {
     display: grid;
-    row-gap: 2.5em;
+    row-gap: 2em;
     margin: 0.5rem;
 }
 
 .flex-items {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    align-items:normal;
+    /* justify-content:space-around; */
     margin: 0.5rem;
 }
 
 .box {
     text-align: center;
-    flex: 150px;
+    flex: 100px;
     margin: 0.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 @media only screen and (max-width: 768px) {
