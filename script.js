@@ -26,12 +26,11 @@ function closeMenu() {
 // Slider
 async function imageSlider() {
     try {
-        const query = "nature"; // define the query parameter
-        const orient = "landscape"; // define the orientation parameter
-        const size = "small"; // define the size parameter
+        const query = "Monuments"; // define the query parameter
+        const orient = "square"; // define the orientation parameter
 
         // Fetching response from Public API
-        const url = `${PHOTO_API_URL}?query=${query}&orientation=${orient}&size=${size}`;
+        const url = `${PHOTO_API_URL}?query=${query}&orientation=${orient}`;
         const response = await fetch(url, {
             method: "GET",
             headers: {
@@ -56,4 +55,5 @@ async function imageSlider() {
     } catch (e) {
         console.error(e);
     }
-}imageSlider(); // call the imageSlider function
+}
+imageSlider(); // call the imageSlider function
