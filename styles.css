@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto Slab', serif;
-    color: balck;
+    color: black;
 }
 
 
@@ -155,16 +155,16 @@ p {
 .flex-items {
     display: flex;
     flex-wrap: wrap;
-    align-items: normal;
+    align-items: center;
     justify-content: space-between;
     margin: 0.5rem;
 }
 
 .box {
+    text-align: center;
     flex: 150px;
     margin: 0.5rem;
     padding: 1rem;
-    border: 1px solid red;
 }
 
 @media only screen and (max-width: 768px) {

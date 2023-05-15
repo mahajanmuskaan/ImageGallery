@@ -1,9 +1,11 @@
 const API_KEY = "TMy0YuxZUhfXJaQu768IY2KoCRlWbUyWZNxyYbuXwrWVvTXBqFY5NUDl";
 const PHOTO_API_URL = "https://api.pexels.com/v1/search";
+const PHOTO_COLLECTIONS = "https://api.pexels.com/v1/collections/featured";
 const hamburger = document.querySelector(".hamburger");
 const navList = document.querySelector(".nav_list");
 const navItems = document.querySelectorAll(".nav_list_items");
 const slideImages = document.querySelectorAll(".carousel-inner img");
+const boxImages = document.querySelectorAll(".box img");
 
 // Here the function mobileMenu() also adds an active class on our hamburger and our nav_list which makes our mobile menu open.
 
@@ -50,6 +52,9 @@ async function imageSlider() {
                 slideImages.forEach((element, index) => {
                     element.setAttribute("src", `${json_data.photos[index].src.original}`);
                 });
+                boxImages.forEach((element, index) => {
+                    element.setAttribute("src", `${json_data.photos[index].src.medium}`);
+                });
             }
         }
     } catch (e) {
@@ -57,5 +62,3 @@ async function imageSlider() {
     }
 }
 imageSlider(); // call the imageSlider function
-
-// Different Categories Images
