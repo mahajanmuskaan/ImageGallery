@@ -15,6 +15,8 @@ nav {
 h1 {
     text-align: center;
     font-size: 2em;
+    font-family:cursive;
+    font-weight: bold;
 }
 
 h3 {
@@ -44,9 +46,9 @@ p {
 }
 
 .log_header img {
-    width: 60px;
-    height: 60px;
-    margin: 3px;
+    width: 50px;
+    height: 50px;
+    margin: 2px;
     padding: 2px;
 }
 
@@ -92,6 +94,12 @@ p {
 
 .hamburger {
     display: none;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.hamburger:focus .bar {
+    background-color: #1B9C85;
 }
 
 .bar {
@@ -100,10 +108,11 @@ p {
     height: 5px;
     margin: 5px auto;
     background-color: rgb(7, 7, 7);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .carousel-inner img {
-    height: 600px;
+    height: 550px;
 }
 
 .categories {
@@ -197,6 +206,7 @@ p {
 
     .nav_list.active {
         left: 0;
+        backdrop-filter: blur(50px);
     }
 
     .nav_list_items {

@@ -19,6 +19,11 @@ function mobileMenu() {
     navList.classList.toggle("active");
 }
 
+function toggleMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.classList.toggle('active');
+  }
+
 // The closeMenu() function removes the active class from both the nav_list and the hamburger which makes our mobile menu close.
 
 navItems.forEach(n => n.addEventListener("click", closeMenu));
