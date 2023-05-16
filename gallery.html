@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="gallery">
+    <div>
+        <h1 id="curated-title">Welcome to Gallery ❤️</h1>
+    </div>
+    <h1 style="text-align: left; margin: 1.5rem;padding: auto;color: white;">Some Curated Pics..</h1>
+    <div class="container-fluid curated-grid">
+        <div id="curated" class="curated"></div>
+    </div>
+</body>
+<script>
+    // Define constants
+    const API_KEY = "TMy0YuxZUhfXJaQu768IY2KoCRlWbUyWZNxyYbuXwrWVvTXBqFY5NUDl";
+    const PHOTO_API_URL = "https://api.pexels.com/v1/search";
+    const PHOTO_COLLECTIONS = "https://api.pexels.com/v1/curated";
+    // Get DOM objects
+    const container = document.querySelector("#curated");
+    async function imageGenerated() {
+        try {
+            // Define the orientation parameter and fetch images from Public API
+            const urlnew = `${PHOTO_COLLECTIONS}?&per_page=45`;
+            const responsenew = await fetch(urlnew, {
+                method: "GET",
+                headers: {
+                    "Authorization": API_KEY,
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+            });
+
+            console.log(responsenew.status);   // Getting Response status
+            console.log(responsenew.ok);       // Getting boolean value of response.ok
+            if (!responsenew.ok) {
+                throw new Error(`HTTP error! status: ${responsenew.status}`);     // if boolean value of response.ok is false, it will throw the error.
+            } else {
+                const json_data_new = await responsenew.json();
+                const photos = json_data_new.photos;
+
+                // Iterate over the photos and create image elements to display them
+                photos.forEach((photo) => {
+                    const img = document.createElement("img");
+                    img.classList.add("curated-img");
+                    img.setAttribute("src", photo.src.medium); // Assuming the API response has a 'src' property with different sizes
+                    container.appendChild(img);
+                });
+            }
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+
+    imageGenerated(); // call the imageSlider function
+</script>
+
+</html>
