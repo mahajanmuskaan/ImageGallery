@@ -229,13 +229,11 @@ p {
 .curated {
     display: flex;
     flex-wrap: wrap;
-    align-items: normal;
-    justify-content: center;
+    align-items:normal;
     margin: 0.5rem;
 }
 
 .curated-img {
-    width: auto;
     margin: 0.5rem;
 }
 
@@ -300,5 +298,29 @@ p {
         /* flex: 100px; */
         margin: 0.3rem;
         padding: 0.3rem;
+    }
+    .curated-grid {
+        row-gap: 1.5em;
+        /* overflow: hidden; */
+        background: linear-gradient(135deg, rgb(2, 90, 252) 0%, rgba(33, 33, 33, 1) 50%, rgba(150, 4, 31, 1) 50%, rgba(191, 4, 38, 1) 60%);
+    }
+    
+    #curated-title {
+        font-size: 3rem;
+        margin: 2rem;
+        padding: auto;
+        color: white;
+    }
+    
+    .curated {
+        display: flex;
+        flex-flow: row wrap;
+        justify-self: center;
+        margin: 0.3rem;
+    }
+    
+    .curated-img {
+        max-width: 50%;
+        margin: 0.2rem;
     }
 }
