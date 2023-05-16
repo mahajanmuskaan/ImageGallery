@@ -31,8 +31,8 @@ function closeMenu() {
 // Slider functionality
 async function imageSlider() {
     try {
-        const query = "Forests"; // define the query parameter
-        const orient = "square"; // define the orientation parameter
+        const query = "rainbow"; // define the query parameter
+        const orient = "landscape"; // define the orientation parameter
 
         // Fetching response from Public API
         const url = `${PHOTO_API_URL}?query=${query}&orientation=${orient}&per_page=20`;
