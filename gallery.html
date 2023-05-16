@@ -21,13 +21,12 @@
 <script>
     // Define constants
     const API_KEY = "TMy0YuxZUhfXJaQu768IY2KoCRlWbUyWZNxyYbuXwrWVvTXBqFY5NUDl";
-    const PHOTO_API_URL = "https://api.pexels.com/v1/search";
     const PHOTO_COLLECTIONS = "https://api.pexels.com/v1/curated";
     // Get DOM objects
     const container = document.querySelector("#curated");
     async function imageGenerated() {
         try {
-            // Define the orientation parameter and fetch images from Public API
+            // fetch images from Public API
             const urlnew = `${PHOTO_COLLECTIONS}?&per_page=50`;
             const responsenew = await fetch(urlnew, {
                 method: "GET",
@@ -60,7 +59,7 @@
         }
     }
 
-    imageGenerated(); // call the imageSlider function
+    imageGenerated(); // call the imageGenerated function
 </script>
 
 </html>
