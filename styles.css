@@ -222,19 +222,20 @@ p {
 #curated-title {
     font-size: 3rem;
     margin: 2rem;
-    padding: auto;
+    padding: 1rem;
     color: white;
 }
 
 .curated {
     display: flex;
-    flex-wrap: wrap;
-    align-items:normal;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
     margin: 0.5rem;
 }
 
 .curated-img {
     margin: 0.5rem;
+    max-width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -308,19 +309,19 @@ p {
     #curated-title {
         font-size: 3rem;
         margin: 2rem;
-        padding: auto;
+        padding: 1rem;
         color: white;
     }
     
     .curated {
         display: flex;
         flex-flow: row wrap;
-        justify-self: center;
+        justify-content: space-evenly;
         margin: 0.3rem;
     }
     
     .curated-img {
-        max-width: 50%;
-        margin: 0.2rem;
+        max-width: 30%;
+        margin: 0.3rem;
     }
 }
