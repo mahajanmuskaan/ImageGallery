@@ -1,6 +1,9 @@
+// Define constants
 const API_KEY = "TMy0YuxZUhfXJaQu768IY2KoCRlWbUyWZNxyYbuXwrWVvTXBqFY5NUDl";
 const PHOTO_API_URL = "https://api.pexels.com/v1/search";
 const PHOTO_COLLECTIONS = "https://api.pexels.com/v1/collections/featured";
+
+// Get DOM elements
 const hamburger = document.querySelector(".hamburger");
 const navList = document.querySelector(".nav_list");
 const navItems = document.querySelectorAll(".nav_list_items");
@@ -8,10 +11,9 @@ const slideImages = document.querySelectorAll(".carousel-inner img");
 const boxImages = document.querySelectorAll(".box img");
 const allButtons = document.querySelectorAll(".categories-list-item");
 
-// Here the function mobileMenu() also adds an active class on our hamburger and our nav_list which makes our mobile menu open.
-
+// Mobile Menu functionality
 hamburger.addEventListener("click", mobileMenu);
-
+// Here the function mobileMenu() also adds an active class on our hamburger and our nav_list which makes our mobile menu open.
 function mobileMenu() {
     hamburger.classList.toggle("active");
     navList.classList.toggle("active");
@@ -26,7 +28,7 @@ function closeMenu() {
     navList.classList.remove("active");
 }
 
-// Slider
+// Slider functionality
 async function imageSlider() {
     try {
         const query = "Forests"; // define the query parameter
@@ -53,7 +55,9 @@ async function imageSlider() {
                 slideImages.forEach((element, index) => {
                     element.setAttribute("src", `${json_data.photos[index].src.original}`);
                 });
-                var querynew = "wallpaper";// define the query parameter
+
+                // Set the query parameter for randomImages function on button click
+                var querynew = "wallpaper";
 
                 allButtons.forEach(function (button) {
                     button.addEventListener('click', function () {
@@ -63,6 +67,7 @@ async function imageSlider() {
                         randomImages(querynew);
                     });
                 });
+                // Call randomImages function with default query parameter
                 randomImages(querynew);
             }
         }
@@ -71,9 +76,10 @@ async function imageSlider() {
     }
 }
 
+// Random Images functionality
 async function randomImages(querynew) {
     try {
-        // Coded for generating Particular Photos
+        // Define the orientation parameter and fetch images from Public API
         const orientnew = "square";
         const urlnew = `${PHOTO_API_URL}?query=${querynew}&orientation=${orientnew}&per_page=20`;
         const responsenew = await fetch(urlnew, {
