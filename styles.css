@@ -198,6 +198,22 @@ p {
     padding: 0.5rem;
 }
 
+.box img:hover {
+    transform: scale(1.1);
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
+}
+
+.curated img:hover {
+    transform: scale(1.05);
+    transition: all 0.8s ease-in-out;
+    cursor: pointer;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
 .footer-part {
     padding: 1rem;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='1000' preserveAspectRatio='none' viewBox='0 0 1440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2020%26quot%3b)' fill='none'%3e%3crect width='1440' height='1000' x='0' y='0' fill='url(%23SvgjsLinearGradient2021)'%3e%3c/rect%3e%3cpath d='M1440 0L1398.2 0L1440 302.73z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1398.2 0L1440 302.73L1440 484.66L923.95 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M923.95 0L1440 484.66L1440 553.83L683.09 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M683.09 0L1440 553.83L1440 811.1200000000001L400.94000000000005 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 1000L248.34 1000L0 625.47z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 625.47L248.34 1000L451.63 1000L0 585.5z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 585.5L451.63 1000L1067.8400000000001 1000L0 438.77z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 438.77L1067.8400000000001 1000L1178.3700000000001 1000L0 148.52999999999997z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2020'%3e%3crect width='1440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='7.64%25' y1='-11%25' x2='92.36%25' y2='111%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2021'%3e%3cstop stop-color='rgba(14%2c 42%2c 71%2c 1)' offset='0.37'%3e%3c/stop%3e%3cstop stop-color='rgba(167%2c 138%2c 6%2c 1)' offset='0.62'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
@@ -300,26 +316,27 @@ p {
         margin: 0.3rem;
         padding: 0.3rem;
     }
+
     .curated-grid {
         row-gap: 1.5em;
         /* overflow: hidden; */
         background: linear-gradient(135deg, rgb(2, 90, 252) 0%, rgba(33, 33, 33, 1) 50%, rgba(150, 4, 31, 1) 50%, rgba(191, 4, 38, 1) 60%);
     }
-    
+
     #curated-title {
         font-size: 3rem;
         margin: 2rem;
         padding: 1rem;
         color: white;
     }
-    
+
     .curated {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
         margin: 0.3rem;
     }
-    
+
     .curated-img {
         max-width: 30%;
         margin: 0.3rem;

@@ -63,7 +63,7 @@ async function imageSlider() {
                 });
 
                 // Set the query parameter for randomImages function on button click
-                var querynew = "wallpaper";
+                var querynew = "Nature";
 
                 allButtons.forEach(function (button) {
                     button.addEventListener('click', function () {
