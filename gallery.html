@@ -46,12 +46,19 @@
                 const photos = json_data_new.photos;
 
                 // Iterate over the photos and create image elements to display them
-                photos.forEach((photo) => {
+                photos.forEach((photo, index) => {
                     const img = document.createElement("img");
                     img.classList.add("curated-img");
                     img.setAttribute("src", photo.src.medium); // Assuming the API response has a 'src' property with different sizes
+                    img.addEventListener("click", function () {
+                        const link = document.createElement("a");
+                        link.href = `${json_data_new.photos[index].src.original}`;
+                        link.download = "";
+                        link.click();
+                    });
                     container.appendChild(img);
                 });
+
             }
         }
         catch (e) {

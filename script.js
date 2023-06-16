@@ -9,6 +9,7 @@ const navList = document.querySelector(".nav_list");
 const navItems = document.querySelectorAll(".nav_list_items");
 const slideImages = document.querySelectorAll(".carousel-inner img");
 const boxImages = document.querySelectorAll(".box img");
+const boxImageLink = document.querySelectorAll(".box a");
 const allButtons = document.querySelectorAll(".categories-list-item");
 
 // Mobile Menu functionality
@@ -22,7 +23,7 @@ function mobileMenu() {
 function toggleMenu() {
     const hamburger = document.querySelector('.hamburger');
     hamburger.classList.toggle('active');
-  }
+}
 
 // The closeMenu() function removes the active class from both the nav_list and the hamburger which makes our mobile menu close.
 
@@ -103,8 +104,15 @@ async function randomImages(querynew) {
         } else {
             const json_data_new = await responsenew.json();
             boxImages.forEach((element, index) => {
-                element.setAttribute("src", `${json_data_new.photos[index].src.tiny}`);
+                element.setAttribute("src", `${json_data_new.photos[index].src.medium}`);
+                element.addEventListener("click", function () {
+                    const link = document.createElement("a");
+                    link.href = `${json_data_new.photos[index].src.original}`;
+                    link.download = "";
+                    link.click();
+                });
             });
+
         }
     }
     catch (e) {
